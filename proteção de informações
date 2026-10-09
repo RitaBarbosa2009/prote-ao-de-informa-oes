@@ -1,0 +1,438 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNrGvM4mFxYb0rlh8t5WIYZ",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/RitaBarbosa2009/prote-ao-de-informa-oes/blob/main/prote%C3%A7%C3%A3o%20de%20informa%C3%A7%C3%B5es\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "AULA 1\n",
+        "\n",
+        "\n",
+        "senha = \"123456\" senha_criptografada = \"234567\""
+      ],
+      "metadata": {
+        "id": "iYPpX870Wxu7"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 7,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "H-9mfoHKUK9f",
+        "outputId": "b9e18a8b-0522-48b4-e2ae-b63bc0a8b4fd"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            " 161718192021\n"
+          ]
+        }
+      ],
+      "source": [
+        "senha = \"123456\"\n",
+        "senha_criptografada = \" \"\n",
+        "\n",
+        "for numero in senha:\n",
+        "  numero = int (numero) + 15\n",
+        "  senha_criptografada = senha_criptografada + str (numero)\n",
+        "print (senha_criptografada)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "AULA 2\n",
+        "  \n",
+        "alfabeto= \"abcdefghijklmnopqrstuvwxyz\"\n",
+        "\n",
+        "senha = \"marcelo\"\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "XbOZKeMQXZWF"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "dicionario=\"qwertyuiopasdfghjklzxcvbnm\"\n",
+        "alfabeto= \"abcdefghijklmnopqrstuvwxyz\"\n",
+        "senha = \"marcelo\"\n",
+        "senha_criptografada = \"\"\n",
+        "\n",
+        "for letra in senha:\n",
+        "  posicao = ord(letra) - ord(\"a\")\n",
+        "  senha_criptografada += dicionario[posicao]\n",
+        "\n",
+        "print (senha_criptografada)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "DLUG5HwRXfvW",
+        "outputId": "02cde7b2-2a39-4d3c-e6ec-8b5b32faf359"
+      },
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "dqketsg\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "AULA 3"
+      ],
+      "metadata": {
+        "id": "xWbAEdbfXk17"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "dicionario = \"qwertyuiopasdfghjklzxcvbnm\"\n",
+        "alfabeto = \"abcdefghijklmnopqrstuvwxyz\"\n",
+        "\n",
+        "def codifica(senha):\n",
+        "    senha_criptografada = \"\"\n",
+        "    for letra in senha:\n",
+        "        posicao = ord(letra) - ord(\"a\") # 0 ate 25\n",
+        "        senha_criptografada += dicionario[posicao]\n",
+        "    return senha_criptografada\n",
+        "\n",
+        "senha = \"marcelo\"\n",
+        "print(f\"A senha '{senha}' criptografada é: {codifica(senha)}\")\n",
+        "\n",
+        "\n",
+        "# Exemplo de uso com uma nova senha:\n",
+        "nova_senha = \"python\"\n",
+        "print(f\"A senha '{nova_senha}' criptografada é: {codifica(nova_senha)}\")\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "JZ_DuqYVXlOe",
+        "outputId": "a7e755d6-962a-4559-95b2-1955bc4bd9f4"
+      },
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "A senha 'marcelo' criptografada é: dqketsg\n",
+            "A senha 'python' criptografada é: hnzigf\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "dicionario = \"qwertyuiopasdfghjklzxcvbnm\"\n",
+        "alfabeto = \"abcdefghijklmnopqrstuvwxyz\"\n",
+        "\n",
+        "def codifica(senha):\n",
+        "    senha_criptografada = \"\"\n",
+        "    for letra in senha:\n",
+        "      if \"a\" <= letra <= \"z\":\n",
+        "        posicao = ord(letra) - ord(\"a\") # 0 ate 25\n",
+        "        senha_criptografada += dicionario[posicao]\n",
+        "      else:\n",
+        "        senha_criptografada += letra\n",
+        "    return senha_criptografada\n",
+        "\n",
+        "senha = \"Marcelo123\"\n",
+        "print(f\"A senha '{senha}' criptografada é: {codifica(senha)}\")\n",
+        "\n",
+        "\n",
+        "# Exemplo de uso com uma nova senha:\n",
+        "nova_senha = \"python\"\n",
+        "print(f\"A senha '{nova_senha}' criptografada é: {codifica(nova_senha)}\")\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ZV9wJcjjXsak",
+        "outputId": "40ab7875-d78b-45d1-a39d-28340b4cd0ea"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "A senha 'Marcelo123' criptografada é: Mqketsg123\n",
+            "A senha 'python' criptografada é: hnzigf\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "AULA 4\n",
+        "\n",
+        "Hash"
+      ],
+      "metadata": {
+        "id": "ykpBsQLzX05i"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def calcula_hash(senha):\n",
+        "    valor = 0\n",
+        "    for letra in senha:\n",
+        "        valor = valor + ord(letra)\n",
+        "    return valor\n",
+        "\n",
+        "\n",
+        "print(calcula_hash(\"Marcelo123!@\"))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "zUtU6a4lX78Z",
+        "outputId": "614ae277-4e09-4a6e-88bf-a7b45b3be3ec"
+      },
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "954\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "AULA 5"
+      ],
+      "metadata": {
+        "id": "3fXJ3co-YV7V"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def calcula_hash(senha):\n",
+        "    valor = 0\n",
+        "    for letra in senha:\n",
+        "        valor = valor*31 + ord(letra)\n",
+        "        valor %= 2**32\n",
+        "    return hex(valor)\n",
+        "\n",
+        "\n",
+        "print(calcula_hash(\"Marcelo123!@\"))\n",
+        "print(calcula_hash(\"Ma\"))\n",
+        "print(calcula_hash(\"Marcelo-criptografia-hash-cifras-bilhete-colab-gemini\"))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "D1WkcbWqYYCR",
+        "outputId": "79aa3a89-15e6-4130-8d60-8d2483bd609d"
+      },
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0xe76d642e\n",
+            "0x9b4\n",
+            "0x2d94f86f\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "AULA 6"
+      ],
+      "metadata": {
+        "id": "QSb803xsYcOe"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import hashlib\n",
+        "\n",
+        "def calcula_hash(senha):\n",
+        "    return hashlib.sha256(senha.encode()).hexdigest()\n",
+        "\n",
+        "senha_cadastrada = \"marcelo123\"\n",
+        "hash_cadastrado = calcula_hash(senha_cadastrada)\n",
+        "\n",
+        "senha_digitada = input(\"Digite sua senha: \")\n",
+        "hash_digitado = calcula_hash(senha_digitada)\n",
+        "\n",
+        "if hash_cadastrado == hash_digitado:\n",
+        "    print(\"ACESSO LIBERADO\")\n",
+        "else:\n",
+        "    print(\"ACESSO NEGADO\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "frPkFUIaYdTt",
+        "outputId": "b038b8e5-0abb-4acb-f162-5e9dd71a7c6f"
+      },
+      "execution_count": 13,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite sua senha: 123456\n",
+            "ACESSO NEGADO\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "AULA 7"
+      ],
+      "metadata": {
+        "id": "N5wGc6RLYdoK"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "senhas_comuns = [\n",
+        "    \"123456\",\n",
+        "    \"password\",\n",
+        "    \"123456789\",\n",
+        "    \"qwerty\",\n",
+        "    \"12345678\",\n",
+        "    \"111111\",\n",
+        "    \"12345\",\n",
+        "    \"columbia\",\n",
+        "    \"senha\",\n",
+        "    \"iloveyou\"\n",
+        "]\n",
+        "hashes_comuns = []\n",
+        "\n",
+        "for senha in senhas_comuns:\n",
+        "    hashes_comuns.append(calcula_hash(senha))\n",
+        "\n",
+        "print(hashes_comuns)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "o_LDpKOjYexe",
+        "outputId": "e74c82ad-4394-4a3b-c526-9d162b539ffd"
+      },
+      "execution_count": 14,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "['8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8', '15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225', '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5', 'ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f', 'bcb15f821479b4d5772bd0ca866c00ad5f926e3580720659cc80d39c9d09802a', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '1e103fdeb16ccc3e413269a593820a1353c2f5ce1eae04284aafd0c133a932ef', 'b7e94be513e96e8c45cd23d162275e5a12ebde9100a425c4ebcdd7fa4dcd897c', 'e4ad93ca07acb8d908a3aa41e920ea4f4ef4f26e7f86cf8291c5db289780a5ae']\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import itertools\n",
+        "\n",
+        "combinacoes = itertools.product([hash_cadastrado], hashes_comuns)\n",
+        "print(list(combinacoes))"
+      ],
+      "metadata": {
+        "id": "eegLk89_YuRF"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "AULA 8"
+      ],
+      "metadata": {
+        "id": "9i4EdX4YYwaO"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import hashlib\n",
+        "\n",
+        "def calcula_hash(senha):\n",
+        "    return hashlib.sha256(senha.encode()).hexdigest()\n",
+        "\n",
+        "senha_nova = \"Marcelo-criptografia-hash-cifras-bilhete-colab-genial\"\n",
+        "hash_novo = calcula_hash(senha_nova)\n",
+        "\n",
+        "senha_digitada = input(\"Digite a senha: \")\n",
+        "\n",
+        "if calcula_hash(senha_digitada) == hash_novo:\n",
+        "    print(\"Senha correta!\")\n",
+        "else:\n",
+        "    print(\"Senha incorreta!\")\n"
+      ],
+      "metadata": {
+        "id": "tJX1U29bYyJ-"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
